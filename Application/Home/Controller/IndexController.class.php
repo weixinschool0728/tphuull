@@ -11,31 +11,32 @@ class IndexController extends FontEndController {
 
     public function index() {
 
-        $a = M("modelsinfo");
+//        $a = M("modelsinfo");
+//
+//        $page = $_GET['page'] && $_GET['page'] > 0 ? $_GET['page'] : 1;
+//
+//        if (S("modelinfo" . $page)) {
+//            $data = S("modelinfo" . $page);
+//        } else {
+//            $data = $a->cache("modelinfo{$page}", 60, 'file')->limit($this->pernum * ($page - 1), 10)->order(array("modelid desc", "jiguan"))->select();
+//        }
+////        var_dump($data);
+//
 
-        $page = $_GET['page'] && $_GET['page'] > 0 ? $_GET['page'] : 1;
-
-        if (S("modelinfo" . $page)) {
-            $data = S("modelinfo" . $page);
-        } else {
-            $data = $a->cache("modelinfo{$page}", 60, 'file')->limit($this->pernum * ($page - 1), 10)->order(array("modelid desc", "jiguan"))->select();
-        }
-//        var_dump($data);
-
-
-        $this->assign("models", $data);
+        $this->assign("title", "婚啦啦".CONTROLLER_NAME);
 
         $this->display();
         unset($a);
     }
-
-    public function zhangwen() {
-        $m = M("modelsinfo");
-        $data = $m->where(array("modelid" => $_GET['id']))->find();
-//        myxiaTest();
-        $this->assign("model", $data);
-//        dump($data);
-        $this->display();
-    }
+//
+//    public function zhangwen() {
+//        $m = M("modelsinfo");
+//        $data = $m->where(array("modelid" => $_GET['id']))->find();
+//        $this->assign("model", $data);
+//
+//        $this->display();
+//    }
+    
+    
 
 }
