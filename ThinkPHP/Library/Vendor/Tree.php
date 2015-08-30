@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Tree 树型类(无限分类)
  *
@@ -12,10 +13,12 @@
  *   $nav=$tree->navi(15);
  */
 class Tree {
+
     private $result;
     private $tmp;
     private $arr;
     private $already = array();
+
     /**
      * 构造函数
      *
@@ -29,6 +32,7 @@ class Tree {
         $this->root = $root;
         $this->handler();
     }
+
     /**
      * 树型数据表结果集处理
      */
@@ -58,6 +62,7 @@ class Tree {
         }
         $this->tmp = $tmp;
     }
+
     /**
      * 反向递归
      */
@@ -65,19 +70,23 @@ class Tree {
         foreach ($arr as $v) {
             if ($v[$this->fields[0]] == $id) {
                 $this->arr[] = $v;
-                if ($v[$this->fields[1]] != $this->root) $this->recur_n($arr, $v[$this->fields[1]]);
+                if ($v[$this->fields[1]] != $this->root)
+                    $this->recur_n($arr, $v[$this->fields[1]]);
             }
         }
     }
+
     /**
      * 正向递归
      */
     private function recur_p($arr) {
         foreach ($arr as $v) {
             $this->arr[] = $v[$this->fields[0]];
-            if ($v['child']) $this->recur_p($v['child']);
+            if ($v['child'])
+                $this->recur_p($v['child']);
         }
     }
+
     /**
      * 菜单 多维数组
      *
@@ -88,6 +97,7 @@ class Tree {
         $id = ($id == null) ? $this->root : $id;
         return $this->tmp[$id];
     }
+
     /**
      * 导航 一维数组
      *
@@ -100,6 +110,7 @@ class Tree {
         krsort($this->arr);
         return $this->arr;
     }
+
     /**
      * 散落 一维数组
      *
@@ -112,5 +123,7 @@ class Tree {
         $this->recur_p($this->leaf($id));
         return $this->arr;
     }
+
 }
+
 ?> 

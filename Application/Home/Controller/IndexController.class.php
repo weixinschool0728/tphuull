@@ -23,9 +23,9 @@ class IndexController extends FontEndController {
 ////        var_dump($data);
 //
 
-        $cateory = A("Category");//实例化一个Category类  生成树结构
+        $cateory = A("Category"); //实例化一个Category类  生成树结构
         $catTree = $cateory->getCatTree();
-        
+
         //分配模板变量
         $this->assign("title", "婚啦啦");
         $this->assign("catTree", $catTree);
@@ -33,12 +33,19 @@ class IndexController extends FontEndController {
         unset($cateory);
     }
 
-//
-//    public function zhangwen() {
-//        $m = M("modelsinfo");
-//        $data = $m->where(array("modelid" => $_GET['id']))->find();
-//        $this->assign("model", $data);
-//
+// test paybuy
+    public function paybuy() {
+        echo vendor("PayBuy.AliPay");
+//        vendor($class, $baseUrl, $ext)
+//        $alipay = new AliPay($data);
+        //组装 $data
+        $data=array(
+            "price"=>22,
+            //.......
+        );
+        $alipay=new \AliPay($data);
+        var_dump($alipay);
 //        $this->display();
-//    }
+    }
+
 }
