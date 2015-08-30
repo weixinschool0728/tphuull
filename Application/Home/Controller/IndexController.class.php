@@ -11,18 +11,6 @@ class IndexController extends FontEndController {
 
     public function index() {
 
-//        $a = M("modelsinfo");
-//
-//        $page = $_GET['page'] && $_GET['page'] > 0 ? $_GET['page'] : 1;
-//
-//        if (S("modelinfo" . $page)) {
-//            $data = S("modelinfo" . $page);
-//        } else {
-//            $data = $a->cache("modelinfo{$page}", 60, 'file')->limit($this->pernum * ($page - 1), 10)->order(array("modelid desc", "jiguan"))->select();
-//        }
-////        var_dump($data);
-//
-
         $cateory = A("Category"); //实例化一个Category类  生成树结构
         $catTree = $cateory->getCatTree();
 
@@ -39,11 +27,11 @@ class IndexController extends FontEndController {
 //        vendor($class, $baseUrl, $ext)
 //        $alipay = new AliPay($data);
         //组装 $data
-        $data=array(
-            "price"=>22,
-            //.......
+        $data = array(
+            "price" => 22,
+                //.......
         );
-        $alipay=new \AliPay($data);
+        $alipay = new \AliPay($data);
         var_dump($alipay);
 //        $this->display();
     }

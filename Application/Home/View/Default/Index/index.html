@@ -20,10 +20,18 @@
                 <li>
                     <div class="lunbo_l_m">
                         <div class="lunbo_l_m_l"><{$vo.cat_name}></div>
-                        <div class="lunbo_l_m_r" style="height: auto">
-                            <volist name='vo.child' id='voc'>
-                                <td><a href="<{:U('category/index',array('cid'=>$voc['cat_id']))}>"><{$voc.cat_name}></a></td>
-                            </volist>
+                        <div class="lunbo_l_m_r">
+                            <table  cellspacing="0">
+                                <tr>
+                                <volist name='vo.child' id='voc' mod='4'>
+
+                                    <eq name="mod" value="3"></tr><tr></eq>
+
+                                        <td><a href="<{:U('category/index',array('cid'=>$voc['cat_id'],'pid'=>$vo['cat_id']))}>"><{$voc.cat_name}></a></td>
+
+                                </volist>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </li>
@@ -816,6 +824,8 @@
     <div class="shangpindkj">
         <div class="shangpindkj_title"><a href="#">酒店</a></div>
         <div class="shangpindkj_content">
+            <for start='0' end='8'>
+            
             <div class="shopping">
                 <div class="shopping_img"><img src="__PUBLIC_HOME__/images/index/designers/aiqing.jpg"/></div>
                 <div class="shopping_title">
@@ -832,54 +842,10 @@
                     <div class="shopping_pingjia"></div>
                 </div>
             </div><!--商品1-->
-            <div class="shopping">
-                <div class="shopping_img"><img src="__PUBLIC_HOME__/images/index/designers/aiqing.jpg"/></div>
-                <div class="shopping_title">
-                    <div class="shopping_title_name">商品</div>
-                    <a href="#">爱情的颜色</a></div>
-                <div class="shopping_tr2">
-                    <div class="shopping_title_name">策划师</div>
-                    <a href="#">汤克嘉</a>
-                    <div class="shopping_didian"><img src="__PUBLIC_HOME__/images/index/didian.png"  /><div>湖南 长沙 天心区</div></div>
-                </div><!--第二行信息-->
-                <div class="shopping_pricepj">
-                    <div class="shopping_price">&yen;&nbsp;400</div>
-                    <div class="shopping_pjrenshu"><a href="#">300人评价</a></div>
-                    <div class="shopping_pingjia"></div>
-                </div>
-            </div><!--商品1-->
-            <div class="shopping">
-                <div class="shopping_img"><img src="__PUBLIC_HOME__/images/index/designers/aiqing.jpg"/></div>
-                <div class="shopping_title">
-                    <div class="shopping_title_name">商品</div>
-                    <a href="#">爱情的颜色</a></div>
-                <div class="shopping_tr2">
-                    <div class="shopping_title_name">策划师</div>
-                    <a href="#">汤克嘉</a>
-                    <div class="shopping_didian"><img src="__PUBLIC_HOME__/images/index/didian.png"  /><div>湖南 长沙 天心区</div></div>
-                </div><!--第二行信息-->
-                <div class="shopping_pricepj">
-                    <div class="shopping_price">&yen;&nbsp;400</div>
-                    <div class="shopping_pjrenshu"><a href="#">300人评价</a></div>
-                    <div class="shopping_pingjia"></div>
-                </div>
-            </div><!--商品1-->
-            <div class="shopping">
-                <div class="shopping_img"><img src="__PUBLIC_HOME__/images/index/designers/aiqing.jpg"/></div>
-                <div class="shopping_title">
-                    <div class="shopping_title_name">商品</div>
-                    <a href="#">爱情的颜色</a></div>
-                <div class="shopping_tr2">
-                    <div class="shopping_title_name">策划师</div>
-                    <a href="#">汤克嘉</a>
-                    <div class="shopping_didian"><img src="__PUBLIC_HOME__/images/index/didian.png"  /><div>湖南 长沙 天心区</div></div>
-                </div><!--第二行信息-->
-                <div class="shopping_pricepj">
-                    <div class="shopping_price">&yen;&nbsp;400</div>
-                    <div class="shopping_pjrenshu"><a href="#">300人评价</a></div>
-                    <div class="shopping_pingjia"></div>
-                </div>
-            </div><!--商品1-->
+            
+            </for>
+            
+            
         </div><!--shangpindkj_content-->
         <div class="shangpin_foot"><a href="#" target="_blank">更多酒店请点击</a></div>
     </div><!--shangpindkj-->
