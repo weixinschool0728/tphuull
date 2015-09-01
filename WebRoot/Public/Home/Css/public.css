@@ -2,22 +2,22 @@
 
 /* 默认样式设置*/
 /* -moz :火狐私有属性；-weblit :chrome、safari私有属性* -ms IE私有属性*/
-body,div,ul,li,a,img,input,form,h1,h2,h3,h4,h5,h6,p,table,tr,td{padding:0px;margin:0px;}
+body,div,ul,li,a,img,input,form,h1,h2,h3,h4,h5,h6,p,table,tr,td{ font-family: Microsoft YaHei; padding:0px;margin:0px;}
 div,ul,li,a,img,input,form,h1,h2,h3,h4,h5,h6,p{
-overflow:hidden;}
+overflow:hidden; font-family: Microsoft YaHei;}
 input{box-sizing: content-box;}
 img{border:none;}
 body{
 font-size:12px;
 color:#666;
-font-family:Arial, Helvetica, sans-serif,新宋体;
+font-family:Microsoft YaHei, Arial, Helvetica, sans-serif,新宋体;
 text-align:center;
 }
 div{text-align:left;}
 ul li{list-style:none;}
 h1,h2,h3,h4,h5,h6{font-weight:400;}
 table,td{border:none; border-collapse:collapse;}
-
+i,em{font-style:normal}
 /*全局css*/
 /*字体颜色*/
 .red{
@@ -40,3 +40,15 @@ text-decoration:none;
 a:hover{
 color:#2BB8AA;
 }
+DIV{
+font-size:12px;}
+A{
+font-size:12px;}
+SPAN{
+font-size:12px;}
+FONT{
+font-size:12px;}
+TD{
+font-size:12px;}
+TH{
+font-size:12px;}
