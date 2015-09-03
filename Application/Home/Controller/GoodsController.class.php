@@ -18,17 +18,25 @@ use Home\Controller;
 
 class GoodsController extends FontEndController {
 
-//    function CategoryController(){
-//        $this->category=M("category");
-//    }
+    var $goodsModel = '';
+
+    public function __construct() {
+        parent::__construct();
+        $this->goodsModel = M("Goods");
+    }
+
     public function index() {
         $catId = $_GET['cid'];
         $this->display();
     }
 
-    //商品详细信息
+//商品详细信息
     public function detail() {
         $this->display();
     }
+
+//对外函数
+
+    
 
 }

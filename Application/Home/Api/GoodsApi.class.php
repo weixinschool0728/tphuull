@@ -1,27 +1,23 @@
 <?php
 
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-
 /**
- * Description of GoodsModel
- *www.aixianxing.com
+ * Description of GoodsApi
+ * www.aixianxing.com
  * @author xiaxiaxia
  */
-namespace Home\Model;
+namespace Home\Api;
 use Think\Model;
-class GoodsModel extends Model{
-    var $m=M("Goods");
-    function GoodsModel(){
-        
+class GoodsApi extends Model{
+    
+    function ApiTest(){
+        echo  "ap1Test";
     }
     
-    function getGoodsById($id=0){
-        
-    }
-    
+    //put your code here
 }

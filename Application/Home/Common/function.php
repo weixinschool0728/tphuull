@@ -42,3 +42,30 @@ function ismobile() {
     }
     return false;
 }
+
+//订单生成函数
+
+function createOrderNo() {
+
+    $order_number = date('Ymd') . substr(implode(NULL, array_map('ord', str_split(substr(uniqid(), 7, 13), 1))), 0, 8);
+    return $order_number;
+}
+
+//随机数生成串生成
+
+function createRandom($length = 8) {
+    $str = "qwertyuipasdfghjkzxcvbnmQWERTYUIPASDFGHJKLZXCVBNM23456789";
+    $tempstr = "";
+    for ($i = 0; $i < $length; $i++) {
+        $tempstr.=$str[rand(0,59)];
+    }
+    return $tempstr;
+}
+
+// isLogin
+function isLogin() {
+    if (!isset($_SESSION['username']) || $_SESSION['username'] == '') {
+        $_SESSION['ref'] = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        header("location:" . U("Zhuce/login"));
+    }
+}

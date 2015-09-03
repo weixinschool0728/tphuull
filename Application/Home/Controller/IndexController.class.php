@@ -11,8 +11,8 @@ class IndexController extends FontEndController {
 
     public function index() {
 
-        $cateory = A("Category"); //实例化一个Category类  生成树结构
-        $catTree = $cateory->getCatTree();
+        $catLogic = D("Category","Logic"); //实例化一个Category类  生成树结构
+        $catTree = $catLogic->getCatTree();
 
         //分配模板变量
         $this->assign("title", "婚啦啦");
@@ -23,7 +23,7 @@ class IndexController extends FontEndController {
 
 // test paybuy
     public function paybuy() {
-        echo vendor("PayBuy.AliPay");
+        vendor("PayBuy.AliPay");
 //        vendor($class, $baseUrl, $ext)
 //        $alipay = new AliPay($data);
         //组装 $data

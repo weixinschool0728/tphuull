@@ -8,7 +8,7 @@ require_once 'alipay_md5.function.php';
 class AliPay {
 
     public $partner = '';       //合作身份者id，以2088开头的16位纯数字
-    public $seller_email = '772321344@qq.com';     //收款账号
+    public $seller_email = '';     //收款账号
     public $paykey = '';       //安全检验码，以数字和字母组成的32位字符
     public $notify_url = '';      //服务器异步通知页面路径
     public $return_url = '';      //页面跳转同步通知页面路径
@@ -29,6 +29,10 @@ class AliPay {
     public $waitword = '';     //收货人手机
 
     public function AliPay($data) {
+        $this->partner=C('ALIPAY_PARTNER');
+        $this->seller_email=C('ALIPAY_SELLER_EMAIL');
+        $this->paykey=C("ALIPAY_KEY");
+        
         $alipay_config['partner'] = $this->partner;
         $alipay_config['seller_email'] = $this->seller_email;
         $alipay_config['key'] = $this->paykey;
